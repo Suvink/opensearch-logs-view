@@ -1,0 +1,107 @@
+.row {
+  border-bottom: 1px solid var(--color-border-light);
+  transition: background var(--transition-fast);
+}
+
+.row:hover {
+  background: rgba(7, 130, 126, 0.03);
+}
+
+.row.expanded {
+  background: var(--color-row-highlight);
+}
+
+.td {
+  padding: var(--spacing-sm);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.td:first-child {
+  padding: var(--spacing-xs);
+  width: 32px;
+}
+
+.toggleBtn {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.toggleBtn:hover,
+.expanded .toggleBtn {
+  background: var(--color-accent-teal);
+  color: white;
+}
+
+.timestamp {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.logCell {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
+  width: 100%;
+}
+
+.cell {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  position: relative;
+}
+
+.cell:hover .filterBtns {
+  opacity: 1;
+}
+
+.filterBtns {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  background: linear-gradient(to right, transparent 0, var(--color-panel) 16px);
+  padding-left: 16px;
+}
+
+.filterBtn {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(7, 130, 126, 0.1);
+  color: var(--color-accent-teal);
+  transition: background var(--transition-fast);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-primary);
+}
+
+.filterBtn:hover {
+  background: rgba(7, 130, 126, 0.25);
+}

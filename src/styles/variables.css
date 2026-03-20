@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-bg: #F0F2F4;
+  --color-panel: #FCFEFF;
+  --color-border: #d6d9dd;
+  --color-border-light: #e3e5e8;
+  --color-text-primary: #2a3947;
+  --color-text-secondary: #5a6875;
+  --color-text-muted: #676e75;
+  --color-header-dark: #003553;
+  --color-header-text: #ffffff;
+  --color-accent-teal: #07827e;
+  --color-accent-teal-hover: #017b73;
+  --color-row-highlight: #e4f2f2;
+  --color-danger: #bd271e;
+  --color-danger-hover: #c5060b;
+  --color-sidebar-bg: #FCFEFF;
+  --color-sidebar-search-bg: #e9ecee;
+  --color-input-bg: #f2f4f6;
+  --color-highlight: #fff3cd;
+
+  --font-primary: 'Inter', 'Inter UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Mono', 'Consolas', 'Courier New', monospace;
+  --font-size-table: 14.5px;
+  --font-size-sm: 13px;
+  --font-size-base: 14.5px;
+  --font-size-lg: 16px;
+
+  --sidebar-width: 260px;
+  --histogram-height: 200px;
+  --header-height: 48px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+
+  --shadow-sm: 0 1px 3px rgba(173, 180, 186, 0.3);
+  --shadow-md: 0 2px 6px rgba(173, 180, 186, 0.3);
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+}

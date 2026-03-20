@@ -1,0 +1,148 @@
+.sidebar {
+  /* width set via inline style; min/max enforced in JS */
+  background: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  /* Smooth collapse animation only — not during resize */
+  transition: width var(--transition-normal);
+}
+
+/* Disable transition while the user is actively dragging */
+.sidebar.resizing {
+  transition: none;
+}
+
+.sidebar.collapsed {
+  width: 28px !important;
+  transition: width var(--transition-normal);
+}
+
+.toggleBtn {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: 22px; /* leave room for the resize handle */
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  transition: all var(--transition-fast);
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.toggleBtn:hover {
+  background: var(--color-border-light);
+  color: var(--color-text-primary);
+}
+
+.collapsedToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 1px;
+  padding-top: var(--spacing-md);
+}
+
+.content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* Don't shrink content as the sidebar grows/shrinks */
+  min-width: 0;
+}
+
+.searchContainer {
+  padding: var(--spacing-sm);
+  background: var(--color-sidebar-search-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding-right: 28px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 5px var(--spacing-sm);
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: var(--color-accent-teal);
+  outline: 2px solid rgba(7, 130, 126, 0.2);
+}
+
+.fieldList {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-xs) 0;
+}
+
+.section {
+  margin-bottom: var(--spacing-sm);
+}
+
+.sectionHeader {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) var(--spacing-md);
+  padding-top: var(--spacing-sm);
+}
+
+/* ── Resize handle ───────────────────────────────────────────────────────── */
+
+.resizeHandle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 10;
+  /* Invisible by default; shows a teal line on hover/active */
+  background: transparent;
+  transition: background var(--transition-fast);
+}
+
+.resizeHandle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: transparent;
+  transition: background var(--transition-fast);
+}
+
+.resizeHandle:hover::after,
+.resizing .resizeHandle::after {
+  background: var(--color-accent-teal);
+}
+
+/* While resizing, highlight the handle even without :hover
+   (the cursor may have moved off it during fast drags) */
+.sidebar.resizing .resizeHandle::after {
+  background: var(--color-accent-teal);
+}

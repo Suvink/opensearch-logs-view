@@ -1,0 +1,117 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 10px var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.item:hover {
+  background: var(--color-border-light);
+}
+
+.item.selected {
+  background: rgba(7, 130, 126, 0.08);
+  border-color: rgba(7, 130, 126, 0.3);
+}
+
+.fileIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item.selected .name {
+  color: var(--color-accent-teal);
+}
+
+.meta {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: 2px;
+  flex-wrap: wrap;
+}
+
+.metaTag {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--color-border);
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+.deleteBtn {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-sm);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+  font-size: 14px;
+}
+
+.deleteBtn:hover {
+  background: #fef2f2;
+  color: var(--color-danger);
+}
+
+.confirmDelete {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 11px;
+}
+
+.confirmBtn {
+  background: var(--color-danger);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+}
+
+.confirmBtn:hover {
+  background: var(--color-danger-hover);
+}
+
+.cancelBtn {
+  color: var(--color-text-secondary);
+  padding: 2px 4px;
+  font-size: 11px;
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.cancelBtn:hover {
+  color: var(--color-text-primary);
+}
